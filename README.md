@@ -1,34 +1,45 @@
-Okay, what we try to do here.
+## Goals
 
-We achieving the goals:
+1. Democratize data self service within organization. Make it open to wide audience.
+2. Increase awareness and data leteracy within organization. Teach people what data and data content is available in the organization.
+3. Transform data analysts routine from answering adhoc questions to manager of metadata and meanings
 
-1. Democratize data self service within organization
-2. Increase awareness and data leteracy within organization
+## The system
 
-We are building an application (LLM API caller wrapped into UI and boosted) that does the following:
+We are building an application which is going to have number of modules on boards. In a nutshell we make Assistante powered with LLMs and company context.
 
-**Context manager about data from different sources**
+### Module: Context manager
+
+The module to collect, store and made the full company context related to data available to be used while using LLMs.
+
+Source for data context we envision:
 
 1. Data models (dbt, ORM schemas etc, snow)
 2. Communication tools  (Slack, Teams conversations)
 3. BI tools (Metabase database)
-4. Data terms (Datahub, Atlan and others data catalogs)
-5. TBD
+4. Data catalogs (Datahub, Atlan etc)
 
-Store this somewhere to make it more token friendly?
+### Module: LLM manager
 
-**Tools manager to be used while LLM conversation**
+The module to store and setup communication with different LLMs (including all the available tools)
 
-1. Create SQL
-2. Query DB
-3. Visualise data (single chart, multiple charts)
-4. Analyse data
-5. TBD
+1. API keys setups
+2. Optimizers
+3. Tools setup (create SQL, query DB, visualize)
+4. System promts
 
-**Conversation module**
+### Module: Admin console
 
-1. User inputs text, gets reply
+incl (Context manager, LLM manager). UI to setup all above
+
+### Module: User experience
+
+aka Conversation UI. The place were interaction between user and LLM happens.
+
+1. User inputs text, gets replies
 2. BYOConverstaion module, connect with slack, teams, anyother tool
+
+## Use cases
 
 Regular user interaction:
 1. ask data related questions
